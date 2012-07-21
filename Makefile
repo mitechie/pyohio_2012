@@ -2,6 +2,7 @@
 WD := $(shell pwd)
 PY := bin/python
 PIP := bin/pip
+NOSE := bin/nosetests
 
 # #######
 # INSTALL
@@ -28,3 +29,20 @@ lib/python*/site-packages/pyohio.egg-link:
 .PHONY: clean_all
 clean_all: clean_venv
 	- rm -r dist
+
+# ###########
+# Dependencies
+# ###########
+$(NOSE): deps
+
+.PHONY: deps
+deps:
+	echo "Hit"
+	$(PIP) install -r requirements.txt
+
+.PHONY: test
+test: $(NOSE)
+	nosetests --with-id -v src/pyohio/tests
+
+
+
