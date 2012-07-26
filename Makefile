@@ -47,3 +47,18 @@ deps:
 .PHONY: test
 test: $(NOSE)
 	nosetests --with-id -v src/pyohio/tests
+
+# ###########
+# Deployment
+# ###########
+.PHONY: build
+build:
+	$(PY) setup.py sdist
+
+.PHONY: upload
+upload:
+	$(PY) setup.py sdist upload
+
+.PHONY: version_update
+version_update:
+	$(EDITOR) setup.py src/pyohio/__init__.py NEWS.txt
