@@ -49,6 +49,17 @@ test: $(NOSE)
 	nosetests --with-id -v src/pyohio/tests
 
 # ###########
+# Docs
+# ###########
+.PHONY: docs
+docs:
+	cd docs && make html
+
+.PHONY: docs_upload
+docs_open: docs
+	xdg-open docs/_build/html/index.html
+
+# ###########
 # Deployment
 # ###########
 .PHONY: build
