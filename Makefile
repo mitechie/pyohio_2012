@@ -73,3 +73,15 @@ upload:
 .PHONY: version_update
 version_update:
 	$(EDITOR) setup.py src/pyohio/__init__.py NEWS.txt
+
+
+# ###########
+# Heroku
+# ###########
+.PHONY: heroku
+heroku:
+	git push heroku master
+
+.PHONY: foreman
+foreman:
+	foreman start

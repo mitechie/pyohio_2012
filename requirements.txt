@@ -1,2 +1,4 @@
 nose
 Sphinx
+Flask
+gunicorn
