@@ -80,7 +80,7 @@ version_update:
 # ###########
 .PHONY: heroku
 heroku:
-	git push heroku heroku
+	git push heroku
 
 .PHONY: foreman
 foreman:
