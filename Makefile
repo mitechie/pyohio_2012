@@ -38,7 +38,6 @@ $(NOSE): deps
 
 .PHONY: deps
 deps:
-	echo "Hit"
 	$(PIP) install -r requirements.txt
 
 # ###########

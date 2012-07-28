@@ -7,4 +7,5 @@ class TestHello(TestCase):
 
     def test_hello_sucess(self):
         """The power of hello is with you."""
-        self.assertTrue(pyohio.main().startswith('Hello'), "Starts with 'Hello'")
+        self.assertTrue(pyohio.main().startswith('Hello'),
+                        "Starts with 'Hello'")
